@@ -4,7 +4,7 @@ if (!empty($PARAMS['1'])) {
 //==========>> MENUE OPTIONS
 		case 'home':
 		  include(__ROOT__.'/app/view/_header.phtml');
-			include(__ROOT__.'/app/view/page_00.phtml');
+			include(__ROOT__.'/app/view/page_home.phtml');
 			include(__ROOT__.'/app/view/_footer.phtml');
 		break;
 		case 'one':
@@ -57,11 +57,7 @@ if (!empty($PARAMS['1'])) {
 		break;
 //==========>> FUNCTIONAL OPTIONS
 		case 'dev':
-				include(__ROOT__.'/app/controler/development.php');
-		break;
-
-		case 'q5b35W4M3cWt':
-				include(__ROOT__.'/app/view/dev_demo.html');
+				include(__ROOT__.'/app/controler/dev.php');
 		break;
 
 		case 'clear':

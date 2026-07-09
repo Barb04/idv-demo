@@ -3,51 +3,56 @@
 $url_basic=$_SESSION['SITE']['site_url'];
 
 //== SITE META
-  define('SITE_NAME', 'ACME Corp Demo');
-  define('SITE_DESCRIPTION', 'Kumio is the leading KYC provider');
-  define('SITE_AUTHOR', 'Jumion inc.');
-  define('SITE_KEYWORDS', 'Jumio,kyc,kyb,live,demo,testing');
+  define('SITE_NAME', '1Kosmos Demo');
+  define('SITE_DESCRIPTION', '1Kosmos Identity Verification Platform');
+  define('SITE_AUTHOR', '1Kosmos');
+  define('SITE_KEYWORDS', '1Kosmos,kyc,identity,verification,passwordless,demo');
 
 // == NAVIGATION
   define('MENUE_HOME','home');
-  define('MENUE_ONE','hospitality');
-  define('MENUE_TWO','ride rental');
-  define('MENUE_THREE','gambling');
+  define('MENUE_ONE','Onboarding');
+  define('MENUE_TWO','Recovery');
+  define('MENUE_THREE','Passwordless');
   define('MENUE_FOUR','banking');
 // =========>> First Level Pages
 // =========>> PAGE_PAGE_HOME
-  define('PAGE_HOME_TITLE','Jumio KYX Platform Use-Case Demo');
+  define('PAGE_HOME_TITLE','1Kosmos Identity Platform Demo');
   define('PAGE_HOME_CONTENT_1','');
   define('PAGE_HOME_CONTENT_2','');
   define('PAGE_HOME_CONTENT_3','');
   define('PAGE_HOME_CONTENT_4','');
   define('PAGE_HOME_CONTENT_5','');
 
-// =========>> PAGE_ONE
-  define('PAGE_ONE_TITLE','ACME Holiday Homes');
-  define('PAGE_ONE_CONTENT_1','Please fill out the form to register on our platform');
+// =========>> PAGE_ONE — Account Onboarding (KYC)
+  define('PAGE_ONE_TITLE','Account Onboarding');
+  define('PAGE_ONE_CONTENT_1','Identity verification and KYC for new account creation.');
   define('PAGE_ONE_CONTENT_2','');
   define('PAGE_ONE_CONTENT_3','');
   define('PAGE_ONE_CONTENT_4','');
   define('PAGE_ONE_CONTENT_5','');
 
-  define('PAGE_TWO_TITLE','ACME Rent a Bike');
-  define('PAGE_TWO_CONTENT_1','');
+// =========>> PAGE_TWO — Account Recovery
+  define('PAGE_TWO_TITLE','Account Recovery');
+  define('PAGE_TWO_CONTENT_1','Enter your email to reset your password.');
+  define('PAGE_TWO_CONTENT_2','You will receive a reset link at the address provided.');
   define('PAGE_TWO_CONTENT_2','');
   define('PAGE_TWO_CONTENT_3','');
   define('PAGE_TWO_CONTENT_4','');
   define('PAGE_TWO_CONTENT_5','');
 
-  define('PAGE_THREE_TITLE','ACME Games');
-  define('PAGE_THREE_CONTENT_1','');
+// =========>> PAGE_THREE — Passwordless Sign‑in
+  define('PAGE_THREE_TITLE','Passwordless Sign‑in');
+  define('PAGE_THREE_CONTENT_1','Click the button to sign in without a password.');
+  define('PAGE_THREE_CONTENT_2','Your biometric or device credential will be used.');
   define('PAGE_THREE_CONTENT_2','');
   define('PAGE_THREE_CONTENT_3','');
   define('PAGE_THREE_CONTENT_4','');
   define('PAGE_THREE_CONTENT_5','');
 
-  define('PAGE_FOUR_TITLE','ACME Bank');
-  define('PAGE_FOUR_CONTENT_1','Apply for your new ACME Account today');
-  define('PAGE_FOUR_CONTENT_2','<br>');
+// =========>> PAGE_FOUR
+  define('PAGE_FOUR_TITLE','Banking');
+  define('PAGE_FOUR_CONTENT_1','');
+  define('PAGE_FOUR_CONTENT_2','');
   define('PAGE_FOUR_CONTENT_3','');
   define('PAGE_FOUR_CONTENT_4','');
   define('PAGE_FOUR_CONTENT_5','');

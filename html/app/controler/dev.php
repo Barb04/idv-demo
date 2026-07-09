@@ -21,17 +21,12 @@
 #####################################################################################
 
 if (!empty($PARAMS['2'])) {
- if (DEBUG) {
+  if (DEBUG) {
 	switch ($PARAMS['2']) {
-//==========>>
-		case 'workbanch':
-			include(__ROOT__.'/app/model/workbanch.php');
-			break;
-		//==========>>
 		case 'test':
-			include(__ROOT__.'/app/view/test.html');
+			include(__ROOT__.'/app/view/dev_test.html');
 			break;
- 		//==========>>
+
 		case 'clear':
 			session_unset();
 			session_destroy();

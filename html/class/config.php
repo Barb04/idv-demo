@@ -31,8 +31,5 @@
 
 	
 // API Credentials for IDV
-	$api_key = '2b2i83jup3eu2tr3tn581kl2dc';
-	$api_secret = '1vat6laeka5gv8riltk1j0hqlguo80bue3q6gvrnk9u3f2adl39i';
-	$api_token = base64_encode($api_key . ":" . $api_secret);
-	define( 'API_URL' , 'emea-1.jumio.ai');
-	define( 'API_TOKEN' , $api_token);
+	define( 'API_DATACENTER' , 'emea-1.jumio.ai');
+	define( 'API_TOKEN' , base64_encode('2b2i83jup3eu2tr3tn581kl2dc' . ':' . '1vat6laeka5gv8riltk1j0hqlguo80bue3q6gvrnk9u3f2adl39i'));

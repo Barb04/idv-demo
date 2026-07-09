@@ -64,6 +64,21 @@ if(!empty($HTML_REQUEST['do'])){
 			exit;
 		break;
 
+		case 'login':
+			include(__ROOT__.'/app/model/login.php');
+			exit;
+		break;
+
+		case 'reset':
+			include(__ROOT__.'/app/model/reset.php');
+			exit;
+		break;
+
+		case 'pwless':
+			include(__ROOT__.'/app/model/pwless.php');
+			exit;
+		break;
+
 		case 'callback':
 			echo "callback";
 			#include(__ROOT__.'/app/model/callback.php');

@@ -27,14 +27,12 @@ require_once('./lng/'.$_SESSION['SITE']['language'].'/default.php');
 require_once('./class/functions.php');
 
 //// CAPTURE HTML_REQUESTS /////////////////////////////////////////////////////
-if (!empty($_POST)) { $HTML_REQUEST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);}
-if (!empty($_GET)) 	{ $HTML_REQUEST = filter_input_array(INPUT_GET, FILTER_SANITIZE_STRING);}
+if (!empty($_POST)) { $HTML_REQUEST = filter_input_array(INPUT_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);}
+if (!empty($_GET)) 	{ $HTML_REQUEST = filter_input_array(INPUT_GET, FILTER_SANITIZE_FULL_SPECIAL_CHARS);}
 if (!empty($HTML_REQUEST)) { require_once(__ROOT__.'/app/controler/request.php'); }
 else {
 //// ROUTING ///////////////////////////////////////////////////////////////////
-	$REQUEST = '';
-	$PARAMS = '';
-	$REQUEST = str_replace("/", "/", $_SERVER['REQUEST_URI']);
+ 	$REQUEST = $_SERVER['REQUEST_URI'];
 	$PARAMS = explode("/", $REQUEST);
 	require_once(__ROOT__.'/app/controler/start.php');
 }

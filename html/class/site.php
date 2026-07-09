@@ -28,21 +28,13 @@ if(empty($_SESSION)){
   $_SESSION['SITE']['arrived']=gmdate(DATE_ATOM);
   $_SESSION['SITE']['client_ip']='';
   $_SESSION['SITE']['site_url'] = 'https://'.$_SERVER["HTTP_HOST"].'/';
-  $_SESSION['SITE']['apiToken']='';
-  $_SESSION['SITE']['datacenter']='';
+  $_SESSION['SITE']['apiToken']=API_TOKEN;
+  $_SESSION['SITE']['datacenter']=API_DATACENTER;
   $_SESSION['SITE']['language']='';
   $_SESSION['SITE']['access']='false';
-// check if language is suppoted
+// check if language is supported
   $activeLanguage=substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-  switch ($activeLanguage) {
-    case 'de':
-      $_SESSION['SITE']['language']='de';
-      break;
-
-    default:
-      $_SESSION['SITE']['language']='en';
-      break;
-    }
+  $_SESSION['SITE']['language']='en';
 // -------- GET CLIENT IP -----------------------------------------------------------------
   	if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {   //to check ip is pass from proxy
   	  $_SESSION['SITE']['client_ip']=$_SERVER['HTTP_X_FORWARDED_FOR'];
