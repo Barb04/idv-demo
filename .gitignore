@@ -1,0 +1,9 @@
+# macOS artifacts
+.DS_Store
+
+# Debug logs (generated at runtime when DEBUG=true)
+html/log/
+
+# Nginx backup configs
+nginx/*.bak
+nginx/*_old.conf

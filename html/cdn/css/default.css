@@ -1,0 +1,129 @@
+html, body {
+  height: 100%;
+  font-style: normal;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+/* NAV MENUE */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 10px 14px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+/* content */
+#container {
+  background-color: #33ccff
+  flex: 1 0 auto;
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  padding: 10px;
+  max-width:920px;
+  min-width:350px;
+}
+
+.page_title{
+  text-align: center;
+  font-size: 24px;
+}
+
+.page_content{
+  text-align: center;
+  font-size: 16px;
+}
+/* footer */
+.footer {
+  background-color: black;
+  text-align: center;
+  margin: auto;
+  padding: 10px;
+  height:40px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+
+
+#open-popup {padding:5px}
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+}
+.decodeButton {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 2px 2px;
+  margin: auto;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.panel-title {
+  display: inline;
+  font-weight: bold;
+}
+.checkbox.pull-right {
+  margin: 0;
+}
+.pl-ziro {
+  padding-left: 0px;
+}
+#expityMonth{
+  padding-left: 0px;
+  padding-right: 0px;
+  text-align: center;
+}#expityYear {
+  padding-left: 0px;
+  padding-right: 0px;
+  text-align: center;
+}
+
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
