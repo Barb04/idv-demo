@@ -7,3 +7,8 @@ html/log/
 # Nginx backup configs
 nginx/*.bak
 nginx/*_old.conf
+ 
+.vscode/
+*.log
+Thumbs.db
+.DS_Store

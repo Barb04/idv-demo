@@ -1,0 +1,21 @@
+<?php
+$idv = $_SESSION['TRANSACTION']['idverify_response'] ?? [];
+$scanUrl = $idv['url'] ?? '';
+?>
+<div id="form_container">
+  <div class="text-center mb-2">
+    <span class="badge" style="background-color:#E2231A;">Step 1 of 4</span>
+  </div>
+  <div class="page_title">Identity Verification</div>
+  <div class="page_content">Scan your driver's license to verify your identity.</div>
+
+  <div class="onboarding-card text-center">
+    <?php if ($scanUrl): ?>
+      <p>Open this link on your phone to scan your ID:</p>
+      <p style="word-break: break-all;"><a href="<?php echo htmlspecialchars($scanUrl); ?>" target="_blank"><?php echo htmlspecialchars($scanUrl); ?></a></p>
+      
+    <?php else: ?>
+      <p>Something went wrong starting your verification session. Please try again.</p>
+    <?php endif; ?>
+  </div>
+</div>

@@ -21,13 +21,7 @@
 #####################################################################################
 #phpinfo();exit;
 //// SET BASICS ////////////////////////////////////////////////////////////////
-#phpinfo();exit;
-//// SUPPRESS ERROR DISPLAY (PRODUCTION) ////////////////////////////////////////
-error_reporting(E_ALL);
-ini_set('display_errors', '0');
-ini_set('log_errors', '1');
 
-//// SET BASICS ////////////////////////////////////////////////////////////////
 require_once('./class/config.php');
 require_once('./class/site.php');
 require_once('./lng/'.$_SESSION['SITE']['language'].'/default.php');

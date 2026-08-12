@@ -1,0 +1,39 @@
+<div id="form_container">
+  <div class="dashboard-banner">
+    <h2>Welcome </h2>
+    <p><?php echo htmlspecialchars($_SESSION['SITE']['pending_email'] ?? 'user'); ?></p>
+  </div>
+
+  <div class="page_content" style="margin-bottom: 20px;">Choose a step to continue:</div>
+
+  <div class="row g-3">
+    <div class="col-md-6">
+      <a href="<?php echo $_SESSION['SITE']['site_url']; ?>one" class="step-card">
+        <div class="step-number">1</div>
+        <h5>Personal Details</h5>
+        <p style="color:#666; margin:0;">Start account onboarding</p>
+      </a>
+    </div>
+    <div class="col-md-6">
+      <a href="<?php echo $_SESSION['SITE']['site_url']; ?>two" class="step-card">
+        <div class="step-number">2</div>
+        <h5>Account Recovery</h5>
+        <p style="color:#666; margin:0;">Reset access options</p>
+      </a>
+    </div>
+    <div class="col-md-6">
+      <a href="<?php echo $_SESSION['SITE']['site_url']; ?>three" class="step-card">
+        <div class="step-number">3</div>
+        <h5>Passwordless Sign-in</h5>
+        <p style="color:#666; margin:0;">Biometric / device login demo</p>
+      </a>
+    </div>
+    <div class="col-md-6">
+      <a href="<?php echo $_SESSION['SITE']['site_url']; ?>four" class="step-card">
+        <div class="step-number">4</div>
+        <h5>Banking</h5>
+        <p style="color:#666; margin:0;">Complete verification flow</p>
+      </a>
+    </div>
+  </div>
+</div>

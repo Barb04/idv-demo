@@ -1,0 +1,29 @@
+<div id="form_container">
+  <div class="page_title">Check your email</div>
+  <div class="page_content">We sent a 6-digit code to <?php echo htmlspecialchars($_SESSION['SITE']['pending_email'] ?? ''); ?>. Enter it below.</div>
+
+  <?php if (($_SESSION['SITE']['mail_status'] ?? '') === 'sent'): ?>
+    <div class="page_content" style="color:green;">
+      A code has been sent to your email.
+    </div>
+  <?php elseif (($_SESSION['SITE']['mail_status'] ?? '') === 'failed'): ?>
+    <div class="page_content" style="color:#b00;">
+      Something went wrong sending the email. Please try again.
+    </div>
+  <?php endif; ?>
+
+  <?php if (!empty($_SESSION['SITE']['verify_error'])): ?>
+    <div class="page_content" style="color:#b00;">
+      <?php echo htmlspecialchars($_SESSION['SITE']['verify_error']); unset($_SESSION['SITE']['verify_error']); ?>
+    </div>
+  <?php endif; ?>
+
+  <form method="post" action="<?php echo $_SESSION['SITE']['site_url']; ?>">
+    <input type="hidden" name="do" value="verify_code">
+    <div class="mb-3">
+      <label for="code" class="form-label">6-digit code</label>
+      <input type="text" class="form-control" id="code" name="code" maxlength="6" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Verify</button>
+  </form>
+</div>
