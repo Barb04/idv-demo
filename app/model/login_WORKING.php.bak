@@ -1,0 +1,53 @@
+<?php
+require_once __ROOT__ . '/class/phpmailer/Exception.php';
+require_once __ROOT__ . '/class/phpmailer/PHPMailer.php';
+require_once __ROOT__ . '/class/phpmailer/SMTP.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+if (!empty($HTML_REQUEST['email'])) {
+    $email = $HTML_REQUEST['email'];
+
+    // generate a random 6-digit code
+    $code = str_pad(random_int(0, 999999), 6, '0', STR_PAD_LEFT);
+
+    $_SESSION['SITE']['pending_email'] = $email;
+    $_SESSION['SITE']['pending_code']  = $code;
+    $_SESSION['SITE']['code_expires']  = time() + 600; // valid 10 minutes
+
+    $mail = new PHPMailer(true);
+    try {
+        $mail->isSMTP();
+        $mail->Host       = 'smtp.ethereal.email';
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'aracely.wintheiser13@ethereal.email';
+        $mail->Password   = '3Bn56jqhfUAGxTUUU4';
+        $mail->SMTPSecure = 'tls';
+        $mail->Port       = 587;
+
+        $mail->SMTPOptions = [
+    'ssl' => [
+        'verify_peer'       => false,
+        'verify_peer_name'  => false,
+        'allow_self_signed' => true,
+    ]
+];
+
+        $mail->setFrom('no-reply@1kosmos-demo.local', '1Kosmos Demo');
+        $mail->addAddress($email);
+        $mail->Subject = 'Your 1Kosmos Demo access code';
+        $mail->Body    = "Your verification code is: $code\n\nThis code expires in 10 minutes.";
+
+        $mail->send();
+        $_SESSION['SITE']['mail_status'] = 'sent';
+        debug_log("pwless code sent", $email . ' => ' . $code);
+    } catch (Exception $e) {
+        $_SESSION['SITE']['mail_status'] = 'failed';
+        debug_log("pwless mail error", $mail->ErrorInfo);
+    }
+}
+
+$url_basic = $_SESSION['SITE']['site_url'];
+header('Location: ' . $url_basic . 'verify');
+exit;

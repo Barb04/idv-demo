@@ -1,0 +1,14 @@
+<div id="form_container">
+  <div class="page_title">Account Recovery Confirmation</div>
+
+  <div class="onboarding-card text-center">
+    <?php if ($resetError): ?>
+      <p style="color:#b00;">Something went wrong verifying this link.</p>
+    <?php elseif ($resetResult && !isset($resetResult['error_code']) && (($resetResult['status'] ?? '') === 'redeemed')): ?>
+      <p style="color:green; font-weight:bold;">Your account access has been recovered successfully!</p>
+      <p><a href="<?php echo $_SESSION['SITE']['site_url']; ?>dashboard">Go to Dashboard</a></p>
+    <?php else: ?>
+      <p style="color:#b00;">This recovery link is invalid or has expired.</p>
+    <?php endif; ?>
+  </div>
+</div>
