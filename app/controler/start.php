@@ -120,7 +120,6 @@ break;
 	}
 
 } else {
-	$_SESSION=array();
 	include(__ROOT__.'/app/view/_header.phtml');
 	include(__ROOT__.'/app/view/page_home.phtml');
 	include(__ROOT__.'/app/view/_footer.phtml');
