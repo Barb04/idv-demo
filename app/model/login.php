@@ -20,7 +20,7 @@ if (!empty($HTML_REQUEST['email'])) {
         $_SESSION['SITE']['mail_status'] = 'sent';
     } catch (Exception $e) {
         $_SESSION['SITE']['mail_status'] = 'failed';
-        debug_log("BlockID OTP error", $e->getMessage());
+        debug_log("BlockID OTP error", $e->getMessage()); error_log("BlockID OTP error: " . $e->getMessage());
     }
 }
 
