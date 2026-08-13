@@ -1,0 +1,170 @@
+<?php
+
+?>
+<div id="form_container">
+  <div class="text-center mb-2">
+    <span class="badge" style="background-color:#E2231A;">Step 1 of 4</span>
+  </div>
+  <div class="page_title"><?php echo PAGE_ONE_TITLE; ?></div>
+    <div class="page_content"><?php echo PAGE_ONE_CONTENT_1; ?></div>
+    <div class="page_content"><?php echo PAGE_ONE_CONTENT_2; ?></div>
+    <div class="page_content"><?php echo PAGE_ONE_CONTENT_3; ?></div>
+    <div class="page_content"><?php echo PAGE_ONE_CONTENT_4; ?></div>
+    <div class="page_content"><?php echo PAGE_ONE_CONTENT_5; ?></div>
+
+  <div class="onboarding-card">
+    <form action="/" method="post" id="onboarding-form">
+      <input name="do" value="one" type="hidden">
+
+      <h6 class="section-label">Personal Information</h6>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="first-name">First Name</label>
+            <input type="text" class="form-control" id="first-name" name="first-name">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" class="form-control" id="last-name" name="last-name">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="date-of-birth">Date of Birth</label>
+        <input type="date" class="form-control" id="date-of-birth" name="date-of-birth">
+      </div>
+
+      <h6 class="section-label">Address</h6>
+      <div class="form-group">
+        <label for="street">Street</label>
+        <input type="text" class="form-control" id="street" name="street">
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" id="city" name="city">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="postcode">Postcode</label>
+            <input type="text" class="form-control" id="postcode" name="postcode">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="country">Country</label>
+        <select class="form-control" id="country" name="country">
+          <option>Country</option>
+          <option value="ALA">Åland Islands</option>
+          <option value="ALB">Albania</option>
+          <option value="AND">Andorra</option>
+          <option value="AUT">Austria</option>
+          <option value="BLR">Belarus</option>
+          <option value="BEL">Belgium</option>
+          <option value="BIH">Bosnia & Herzegovina</option>
+          <option value="BGR">Bulgaria</option>
+          <option value="HRV">Croatia</option>
+          <option value="CZE">Czechia</option>
+          <option value="DNK">Denmark</option>
+          <option value="EST">Estonia</option>
+          <option value="FRO">Faroe Islands</option>
+          <option value="FIN">Finland</option>
+          <option value="FRA">France</option>
+          <option value="DEU">Germany</option>
+          <option value="GIB">Gibraltar</option>
+          <option value="GRC">Greece</option>
+          <option value="GGY">Guernsey</option>
+          <option value="VAT">Vatican City</option>
+          <option value="HUN">Hungary</option>
+          <option value="ISL">Iceland</option>
+          <option value="IRL">Ireland</option>
+          <option value="IMN">Isle of Man</option>
+          <option value="ITA">Italy</option>
+          <option value="JEY">Jersey</option>
+          <option value="KEN">Kenya</option>
+
+          <option value="XKX">Kosovo</option>
+          <option value="LVA">Latvia</option>
+          <option value="LIE">Liechtenstein</option>
+          <option value="LTU">Lithuania</option>
+          <option value="LUX">Luxembourg</option>
+          <option value="MKD">North Macedonia</option>
+          <option value="MLT">Malta</option>
+          <option value="MDA">Moldova</option>
+          <option value="MCO">Monaco</option>
+          <option value="MNE">Montenegro</option>
+          <option value="NLD">Netherlands</option>
+          <option value="NOR">Norway</option>
+          <option value="POL">Poland</option>
+          <option value="PRT">Portugal</option>
+          <option value="ROM">Romania</option>
+          <option value="SMR">San Marino</option>
+          <option value="SRB">Serbia</option>
+          <option value="SCG">Serbia</option>
+          <option value="SVK">Slovakia</option>
+          <option value="SVN">Slovenia</option>
+          <option value="ESP">Spain</option>
+          <option value="SJM">Svalbard & Jan Mayen</option>
+          <option value="SWE">Sweden</option>
+          <option value="CHE">Switzerland</option>
+          <option value="TAN">Tanzania</option>
+          <option value="UGA">Uganda</option>
+          <option value="UKR">Ukraine</option>
+          <option value="GBR">United Kingdom</option>
+        </select>
+      </div>
+
+      <h6 class="section-label">Contact</h6>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="text" class="form-control" id="phone" name="phone">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email">
+          </div>
+        </div>
+      </div>
+
+      <div class="text-end mt-3">
+        <button type="submit" class="btn" id="submit" style="background-color:#E2231A; color:white;">Continue</button>
+      </div>
+    </form>
+  </div>
+</div>
+<script>
+function validateForm(e) {
+  var firstName = document.getElementById("first-name").value;
+  var lastName = document.getElementById("last-name").value;
+  var dateOfBirth = document.getElementById("date-of-birth").value;
+  var street = document.getElementById("street").value;
+  var city = document.getElementById("city").value;
+  var postcode = document.getElementById("postcode").value;
+  var country = document.getElementById("country").value;
+  var phone = document.getElementById("phone").value;
+  var email = document.getElementById("email").value;
+
+  if (firstName === "") { alert("First name is required."); e.preventDefault(); return false; }
+  if (lastName === "") { alert("Last name is required."); e.preventDefault(); return false; }
+  if (dateOfBirth === "") { alert("Date of birth is required."); e.preventDefault(); return false; }
+  if (street === "") { alert("Street is required."); e.preventDefault(); return false; }
+  if (city === "") { alert("City is required."); e.preventDefault(); return false; }
+  if (postcode === "") { alert("Postcode is required."); e.preventDefault(); return false; }
+  if (country === "Country" || country === "") { alert("Country is required."); e.preventDefault(); return false; }
+  if (phone === "") { alert("Phone is required."); e.preventDefault(); return false; }
+  if (email === "") {
+    alert("Email is required."); e.preventDefault(); return false;
+  } else if (!/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)) {
+    alert("Email is not valid."); e.preventDefault(); return false;
+  }
+}
+document.getElementById("onboarding-form").addEventListener("submit", validateForm);
+</script>

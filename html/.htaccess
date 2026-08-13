@@ -1,0 +1,14 @@
+RewriteEngine On
+
+# Block direct access to any .php file except index.php (404 like the nginx rule)
+RewriteCond %{REQUEST_URI} !^/index\.php$
+RewriteCond %{REQUEST_URI} \.php$ [NC]
+RewriteRule ^ - [R=404,L]
+
+# Serve real files/folders directly (css, js, images, etc.)
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Everything else goes through index.php (clean URLs)
+RewriteRule ^ index.php [L,QSA]

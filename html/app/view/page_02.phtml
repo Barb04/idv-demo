@@ -1,0 +1,33 @@
+<?php
+?>
+<div id="form_container">
+  <div class="text-center mb-2">
+    <span class="badge" style="background-color:#E2231A;">Step 2 of 4</span>
+  </div>
+  <div class="page_title"><?php echo PAGE_TWO_TITLE; ?></div>
+    <div class="page_content"><?php echo PAGE_TWO_CONTENT_1; ?></div>
+    <div class="page_content"><?php echo PAGE_TWO_CONTENT_2; ?></div>
+
+  <?php if (($_SESSION['SITE']['mail_status'] ?? '') === 'sent'): ?>
+    <div class="page_content" style="color:green;">
+      A recovery link has been sent to your email.
+    </div>
+  <?php elseif (($_SESSION['SITE']['mail_status'] ?? '') === 'failed'): ?>
+    <div class="page_content" style="color:#b00;">
+      Something went wrong sending the recovery link. Please try again.
+    </div>
+  <?php endif; ?>
+
+  <div class="onboarding-card">
+    <form action="/" method="post">
+      <input name="do" value="reset" type="hidden">
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+      </div>
+      <div class="text-end mt-3">
+        <button type="submit" class="btn" style="background-color:#E2231A; color:white;">Reset Password</button>
+      </div>
+    </form>
+  </div>
+</div>
